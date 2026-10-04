@@ -101,7 +101,7 @@ add_subdirectory(src/encoding)
 
 add_library( e2sim_shared SHARED
 
-"$<TARGET_OBJECTS:def_objects>;$<TARGET_OBJECTS:sctp_objects>;$<TARGET_OBJECTS:messagerouting_objects>;$<TARGET_OBJECTS:encoding_objects>;$<TARGET_OBJECTS:base_objects>"
+"$<TARGET_OBJECTS:def_objects>;$<TARGET_OBJECTS:sctp_objects>;$<TARGET_OBJECTS:messagerouting_objects>;$<TARGET_OBJECTS:encoding_objects>;$<TARGET_OBJECTS:base_objects>;$<TARGET_OBJECTS:asn1_objects>"
 
 )
 
@@ -109,7 +109,7 @@ add_library( e2sim_shared SHARED
 # we only build/export the static archive (.a) if generating a dev package
 if( DEV_PKG )
     	add_library( e2sim_static STATIC
-        	     "$<TARGET_OBJECTS:def_objects>;$<TARGET_OBJECTS:sctp_objects>;$<TARGET_OBJECTS:messagerouting_objects>;$<TARGET_OBJECTS:encoding_objects>;$<TARGET_OBJECTS:base_objects>"
+        	     "$<TARGET_OBJECTS:def_objects>;$<TARGET_OBJECTS:sctp_objects>;$<TARGET_OBJECTS:messagerouting_objects>;$<TARGET_OBJECTS:encoding_objects>;$<TARGET_OBJECTS:base_objects>;$<TARGET_OBJECTS:asn1_objects>"
 	)
 
 	set_target_properties( e2sim_static
